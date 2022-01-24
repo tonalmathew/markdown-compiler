@@ -1,7 +1,12 @@
 <template>
-  <!-- <div>{{ markdown }}</div> -->
-  <textarea v-model="markdown" rows="30"></textarea>
-  <div v-html="compileIt"></div>
+<div class="grid grid-cols-2 grid-flow-col gap-4">
+  <div>
+    <textarea v-model="markdown" rows="20"></textarea>
+  </div>
+  <div><div v-html="compileIt"></div></div>
+</div>
+  
+  
 </template>
 
 <script>
@@ -24,17 +29,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-textarea{
-resize: none;
-width: 50%;
+textarea {
+  resize: none !important;
+  width: 100%;
 }
 </style>
