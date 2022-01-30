@@ -9,7 +9,7 @@
       ></textarea>
     </div>
     <hr
-      class="w-full lg:w-0 lg:h-full m-1 border-black bg-black dark:border-white dark:bg-white"
+      class="w-full lg:w-0 lg:h-full m-1 border-gray-900 bg-gray-900 dark:border-white dark:bg-white"
     />
     <div class="grow w-full h-full">
       <div
