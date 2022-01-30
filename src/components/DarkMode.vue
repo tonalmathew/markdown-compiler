@@ -1,21 +1,28 @@
 <template>
-  <div
-    class="flex items-center justify-center mx-auto absolute top-5 right-0 left-1/3"
-  ></div>
-  <div class="flex justify-end items-center space-x-2 mx-auto relative">
-    <input
-      @click="toggleDarkMode"
-      type="checkbox"
-      name=""
-      id="checkbox"
-      class="hidden"
-      checked
-    />
-    <label for="checkbox" class="cursor-pointer">
-      <div class="w-9 h-5 flex items-center dark:bg-gray-400 bg-gray-700 rounded-full p2">
-        <div class="w-4 h-4 bg-white rounded-full shadow switch-ball"></div>
-      </div>
-    </label>
+  <div class="lg:mx-4 dark:bg-gray-900 bg-gray-300 rounded-lg">
+    <div
+      class="flex items-center justify-center mx-auto absolute top-5 right-0 left-1/3"
+    ></div>
+    <div class="flex justify-end items-center space-x-2 mx-auto relative p-2">
+      <h1 class="dark:text-white text-black mr-auto text-xl">
+        Markdown Compiler
+      </h1>
+      <input
+        @click="toggleDarkMode"
+        type="checkbox"
+        name=""
+        id="checkbox"
+        class="hidden"
+        checked
+      />
+      <label for="checkbox" class="cursor-pointer">
+        <div
+          class="w-9 h-5 flex items-center dark:bg-gray-400 bg-gray-700 rounded-full p2"
+        >
+          <div class="w-4 h-4 bg-white rounded-full shadow switch-ball"></div>
+        </div>
+      </label>
+    </div>
   </div>
 </template>
 
@@ -31,7 +38,7 @@ export default {
         : html.classList.remove("dark");
     },
   },
-}
+};
 </script>
 
 <style scoped>
