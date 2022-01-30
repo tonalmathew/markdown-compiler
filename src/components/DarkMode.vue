@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:mx-4 dark:bg-gray-900 bg-gray-300 rounded-lg drop-shadow-lg">
+  <div class="lg:mx-4 dark:bg-gray-900 bg-gray-300 rounded-lg">
     <div
       class="flex items-center justify-center mx-auto absolute top-5 right-0 left-1/3"
     ></div>
