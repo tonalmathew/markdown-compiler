@@ -1,5 +1,6 @@
 <template>
-<div class="grid grid-cols-2 grid-flow-col gap-4">
+    <h1>hai</h1>
+<div class="">
   <div>
     <textarea v-model="markdown" rows="20"></textarea>
   </div>
