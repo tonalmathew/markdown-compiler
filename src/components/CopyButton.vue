@@ -37,7 +37,7 @@ import { createPopper } from "@popperjs/core";
 
 export default {
   name: "copy-button",
-  props: { markdown: String },
+  props: { textToCopy: String },
   data() {
     return {
       popoverShow: false,
@@ -46,16 +46,14 @@ export default {
   methods: {
     async copy() {
       await navigator.clipboard
-        .writeText(this.$props.markdown)
+        .writeText(this.$props.textToCopy)
         .then(() => {
-          if (this.popoverShow) {
-            this.popoverShow = false;
-          } else {
-            this.popoverShow = true;
-            createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
-              placement: "top",
-            });
-          }
+          this.popoverShow
+            ? (this.popoverShow = false)
+            : (this.popoverShow = true);
+          createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
+            placement: "top",
+          });
         })
         .catch((err) => {
           alert("Error in copying text: ", err);
