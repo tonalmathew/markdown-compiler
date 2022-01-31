@@ -1,11 +1,11 @@
 <template>
-  <div class="lg:mx-4 dark:bg-gray-900 bg-gray-300 rounded-lg">
+  <div class="lg:mx-4 dark:bg-dark-1 bg-light-3 rounded-lg">
     <div
       class="flex items-center justify-center mx-auto absolute top-5 right-0 left-1/3"
     ></div>
     <div class="flex justify-end items-center space-x-2 mx-auto relative p-2">
       <h1
-        class="dark:text-white text-black mr-auto text-xl dark:hover:text-red-500 hover:text-red-500"
+        class="dark:text-light-1 text-dark-1 mr-auto text-xl dark:hover:text-light-4 hover:text-light-4"
       >
         Markdown Compiler
       </h1>
@@ -19,9 +19,9 @@
       />
       <label for="checkbox" class="cursor-pointer">
         <div
-          class="w-9 h-5 flex items-center dark:bg-gray-400 bg-gray-700 rounded-full p2"
+          class="w-9 h-5 flex items-center dark:bg-light-4 bg-dark-4 rounded-full p2"
         >
-          <div class="w-4 h-4 bg-white rounded-full shadow switch-ball"></div>
+          <div class="w-4 h-4 bg-light-1 rounded-full shadow switch-ball"></div>
         </div>
       </label>
     </div>

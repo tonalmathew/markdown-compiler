@@ -1,9 +1,9 @@
 <template>
   <div class="bg-gray-100 dark:bg-gray-800 p-5">
-    <p class="text-center dark:text-white text-gray-900">
+    <p class="text-center dark:text-light-1 text-dark-1">
       Made with 💙 by
       <a
-        class="dark:text-white text-gray-900 dark:hover:text-red-500 hover:text-red-500 no-underline font-bold"
+        class="dark:text-light-1 text-dark-1 dark:hover:text-light-4 hover:text-light-4 no-underline font-bold"
         href="https://github.com/tonalmathew"
         >tonalmathew</a
       >.

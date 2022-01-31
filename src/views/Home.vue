@@ -5,18 +5,18 @@
       <copy-button :markdown="markdown" />
       <textarea
         id="textId"
-        class="text-gray-900 bg-gray-300 dark:text-white dark:bg-gray-900 rounded-lg w-full h-full focus:outline-none focus:border-none resize-none text-base"
+        class="text-dark-1 bg-light-3 dark:text-light-1 dark:bg-dark-1 rounded-lg w-full h-full focus:outline-none focus:border-none resize-none text-base"
         v-model="markdown"
         data-gramm_editor="false"
       ></textarea>
     </div>
     <hr
-      class="w-full lg:w-0 lg:h-full m-1 border-gray-900 bg-gray-900 dark:border-white dark:bg-white"
+      class="w-full lg:w-0 lg:h-full m-1 border-dark-1 bg-dark-1 dark:border-light-1 dark:bg-light-1"
     />
     <div class="grow w-full h-full">
       <div
         v-html="compileIt"
-        class="text-gray-900 bg-gray-300 dark:text-white dark:bg-gray-900 p-1 overflow-y-auto rounded-lg h-full text-base"
+        class="text-dark-1 bg-light-3 dark:text-light-1 dark:bg-dark-1 p-1 overflow-y-auto rounded-lg h-full text-base"
       ></div>
     </div>
   </div>

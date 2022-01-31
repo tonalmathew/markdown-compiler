@@ -2,7 +2,7 @@
   <button
     ref="btnRef"
     type="button"
-    class="bg-gray-800 hover:bg-gray-700 text-white border-none rounded-md mx-auto absolute top-0 right-0 mt-1"
+    class="bg-dark-3 hover:bg-dark-4 text-light-1 border-none rounded-md mx-auto absolute top-0 right-0 mt-1"
     id="copyBtn"
     @click="copy"
   >
@@ -24,10 +24,10 @@
   <div
     ref="popoverRef"
     v-bind:class="{ hidden: !popoverShow, block: popoverShow }"
-    class="bg-gray-700 border-0 block text-sm rounded-md"
+    class="bg-dark-4 border-0 block text-sm rounded-md"
   >
     <div>
-      <div class="text-white p-1">copied</div>
+      <div class="text-light-1 p-1">copied!</div>
     </div>
   </div>
 </template>
