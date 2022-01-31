@@ -4,7 +4,9 @@
       class="flex items-center justify-center mx-auto absolute top-5 right-0 left-1/3"
     ></div>
     <div class="flex justify-end items-center space-x-2 mx-auto relative p-2">
-      <h1 class="dark:text-white text-black mr-auto text-xl dark:hover:text-red-500 hover:text-red-500">
+      <h1
+        class="dark:text-white text-black mr-auto text-xl dark:hover:text-red-500 hover:text-red-500"
+      >
         Markdown Compiler
       </h1>
       <input
