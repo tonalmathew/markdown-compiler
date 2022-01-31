@@ -3,8 +3,9 @@
   <div class="flex flex-col lg:flex-row gap-4 h-screen lg:m-4 mt-8">
     <div class="grow w-full h-full relative">
       <button
+      ref="btnRef"
         type="button"
-        class=" bg-gray-800 hover:bg-gray-700 text-white border-none rounded-md mx-auto absolute top-1 right-0"
+        class=" bg-gray-800 hover:bg-gray-700 text-white border-none rounded-md mx-auto absolute top-0 right-0 mt-1"
         id="copyBtn"
         @click="copy"
       >
@@ -23,6 +24,13 @@
           />
         </svg>
       </button>
+      <div ref="popoverRef" v-bind:class="{'hidden': !popoverShow, 'block': popoverShow}" class="bg-gray-700 border-0 block text-sm  rounded-md">
+        <div>
+          <div class="text-white p-1">
+            copied
+          </div>
+        </div>
+      </div>
       <textarea
         id="textId"
         class="text-gray-900 bg-gray-300 dark:text-white dark:bg-gray-900 rounded-lg w-full h-full focus:outline-none focus:border-none resize-none text-base"
@@ -48,6 +56,7 @@
 import { marked } from "marked";
 import DarkMode from "./components/DarkMode.vue";
 import Footer from "./components/Footer.vue";
+import { createPopper } from "@popperjs/core";
 
 export default {
   name: "App",
@@ -58,6 +67,7 @@ export default {
   data() {
     return {
       markdown: "# Hello World!",
+       popoverShow: false,
     };
   },
   computed: {
@@ -68,13 +78,20 @@ export default {
   },
   methods: {
     async copy() {
-      await navigator.clipboard.writeText(this.markdown);
-      // .then(() => {
-      //   alert('Text copied to clipboard');
-      // })
-      // .catch(err => {
-      //   alert('Error in copying text: ', err);
-      // });
+      await navigator.clipboard.writeText(this.markdown)
+      .then(() => {
+        if(this.popoverShow){
+        this.popoverShow = false;
+      } else {
+        this.popoverShow = true;
+        createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
+          placement: "top"
+        });
+      }
+      })
+      .catch(err => {
+        alert('Error in copying text: ', err);
+      });
     },
   },
 };
