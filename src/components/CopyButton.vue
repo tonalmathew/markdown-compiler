@@ -41,23 +41,77 @@ export default {
   data() {
     return {
       popoverShow: false,
+      shareFailed: true,
     };
   },
+  computed: {
+    
+  },
   methods: {
+    isASupportedBrowser() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      return (
+        navigator.userAgent.indexOf("Firefox") === -1 &&
+        ua.indexOf("FBAN") === -1 &&
+        ua.indexOf("FBAV") === -1 &&
+        ua.indexOf("Instagram") === -1
+      );
+    },
     async copy() {
-      await navigator.clipboard
-        .writeText(this.$props.textToCopy)
-        .then(() => {
-          this.popoverShow
-            ? (this.popoverShow = false)
-            : (this.popoverShow = true);
-          createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
-            placement: "top",
-          });
-        })
-        .catch((err) => {
-          alert("Error in copying text: ", err);
-        });
+      const text = this.$props.textToCopy;
+      this.shareFailed = true;
+      try {
+        if (navigator.canShare && this.isASupportedBrowser()) {
+          console.log("yes");
+          const shareData = {
+            text,
+          };
+          if (navigator.canShare(shareData)) {
+            await navigator.share(shareData);
+            this.shareFailed = false;
+          }
+        }
+      } catch (err) {
+        console.log(err);
+        if (err.code === DOMException.ABORT_ERR) {
+          this.shareFailed = false;
+        }
+      }
+      try {
+        if (this.shareFailed) {
+          await navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              this.popoverShow
+                ? (this.popoverShow = false)
+                : (this.popoverShow = true);
+              createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
+                placement: "top",
+              });
+            })
+            .catch((err) => {
+              alert("Error in copying text: ", err);
+            });
+          // this.showMessage("Copied results to clipboard!", 2000);
+        }
+      } catch (err) {
+        alert("Share Failed. Try A Different Web Browser");
+        console.log(err);
+      }
+
+      // await navigator.clipboard
+      //   .writeText(text)
+      //   .then(() => {
+      //     this.popoverShow
+      //       ? (this.popoverShow = false)
+      //       : (this.popoverShow = true);
+      //     createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
+      //       placement: "top",
+      //     });
+      //   })
+      //   .catch((err) => {
+      //     alert("Error in copying text: ", err);
+      //   });
     },
   },
 };
