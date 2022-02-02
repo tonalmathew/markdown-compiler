@@ -5,20 +5,20 @@
       <copy-button :textToCopy="markdown" />
       <textarea
         id="textId"
-        class="text-dark-1 bg-light-3 dark:text-light-1 dark:bg-dark-1 rounded-lg w-full h-full focus:outline-none focus:border-none resize-none text-base"
+        class="text-dark-1 bg-light-3 dark:text-light-1 dark:bg-dark-1 rounded-lg w-full h-full resize-none text-base"
         v-model="markdown"
         data-gramm_editor="false"
       ></textarea>
     </div>
     <hr
-      class="w-full lg:w-0 lg:h-full m-1 border-dark-1 bg-dark-1 dark:border-light-1 dark:bg-light-1"
+      class="w-full lg:w-0 lg:h-full m-1 bg-dark-1 dark:bg-light-1"
     />
     <div class="grow w-full h-full relative">
       <copy-button :textToCopy="printMarkdownAndHtml" />
       <div>
         <button
           @click="showHtmlCode"
-          class="bg-dark-3 hover:bg-dark-4 text-light-1 border-none rounded-md mx-auto absolute top-0 right-0 mt-1 mr-10"
+          class="bg-dark-3 hover:bg-dark-4 text-light-1 border-none rounded-md mx-auto absolute top-2 right-3 mt-1 mr-10"
         >
           <svg
             v-if="isHtmlShown"

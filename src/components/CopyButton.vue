@@ -2,7 +2,7 @@
   <button
     ref="btnRef"
     type="button"
-    class="bg-dark-3 hover:bg-dark-4 text-light-1 border-none rounded-md mx-auto absolute top-0 right-0 mt-1"
+    class="bg-dark-3 hover:bg-dark-4 text-light-1 border-none rounded-md mx-auto absolute top-2 right-2 mt-1"
     id="copyBtn"
     @click="copy"
   >

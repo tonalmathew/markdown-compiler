@@ -5,9 +5,9 @@
     ></div>
     <div class="flex justify-end items-center space-x-2 mx-auto relative p-2">
       <h1
-        class="dark:text-light-1 text-dark-1 mr-auto text-xl dark:hover:text-light-4 hover:text-light-4"
+        class="dark:text-light-1 ml-2 text-dark-1 mr-auto text-xl dark:hover:text-light-4 hover:text-light-4"
       >
-        Markdown Compiler
+        MARKDOWN COMPILER
       </h1>
       <input
         @click="toggleDarkMode"
@@ -19,7 +19,7 @@
       />
       <label for="checkbox" class="cursor-pointer">
         <div
-          class="w-9 h-5 flex items-center dark:bg-light-4 bg-dark-4 rounded-full p2"
+          class="w-9 h-5 mr-2 flex items-center dark:bg-light-4 bg-dark-4 rounded-full p2"
         >
           <div class="w-4 h-4 bg-light-1 rounded-full shadow switch-ball"></div>
         </div>
