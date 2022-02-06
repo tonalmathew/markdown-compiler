@@ -95,23 +95,10 @@ export default {
           // this.showMessage("Copied results to clipboard!", 2000);
         }
       } catch (err) {
-        alert("Share Failed. Try A Different Web Browser");
+        // alert("Share Failed. Try A Different Web Browser");
+        this.showMessage("Share Failed. Try A Different Web Browser");
         console.log(err);
       }
-
-      // await navigator.clipboard
-      //   .writeText(text)
-      //   .then(() => {
-      //     this.popoverShow
-      //       ? (this.popoverShow = false)
-      //       : (this.popoverShow = true);
-      //     createPopper(this.$refs.btnRef, this.$refs.popoverRef, {
-      //       placement: "top",
-      //     });
-      //   })
-      //   .catch((err) => {
-      //     alert("Error in copying text: ", err);
-      //   });
     },
   },
 };
