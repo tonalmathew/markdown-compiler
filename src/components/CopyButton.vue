@@ -44,9 +44,7 @@ export default {
       shareFailed: true,
     };
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     isASupportedBrowser() {
       var ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -89,15 +87,12 @@ export default {
                 placement: "top",
               });
             })
-            .catch(() => {
-              // alert("Error in copying text: ", err);
-              this.showMessage("Share Failed. Try A Different Web Browser");
+            .catch((err) => {
+              alert("Error in copying text: ", err);
             });
-          // this.showMessage("Copied results to clipboard!", 2000);
         }
       } catch (err) {
-        // alert("Share Failed. Try A Different Web Browser");
-        this.showMessage("Share Failed. Try A Different Web Browser");
+        alert("Share Failed. Try A Different Web Browser");
         console.log(err);
       }
     },
