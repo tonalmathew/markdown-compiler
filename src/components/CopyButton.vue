@@ -89,8 +89,9 @@ export default {
                 placement: "top",
               });
             })
-            .catch((err) => {
-              alert("Error in copying text: ", err);
+            .catch(() => {
+              // alert("Error in copying text: ", err);
+              this.showMessage("Share Failed. Try A Different Web Browser");
             });
           // this.showMessage("Copied results to clipboard!", 2000);
         }
